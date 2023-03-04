@@ -15,13 +15,13 @@ import { TaskService } from './task.service';
 export class TaskController {
   constructor(private taskServices: TaskService) {}
   @Get()
-  getTask(): Array<TASK> {
-    return this.taskServices.getTaks();
+  getTask(): Promise<TASK[]> {
+    return this.taskServices.getTasks();
   }
 
   @Get(':id')
   getTaskId(@Param('id') id: string) {
-    return this.taskServices.getTak(parseInt(id));
+    return this.taskServices.getTask(id);
   }
   @Post()
   saveTask(@Body() body: CreateTaskDto): string {
