@@ -9,7 +9,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 @Module({
   imports: [
     TaskModule,
-    MongooseModule.forRoot('mondodb://127.0.0.1:2707/client'),
+    MongooseModule.forRoot('mongodb://127.0.0.1:27017/client'),
   ],
   controllers: [AppController, TaskController],
   providers: [AppService, TaskService],
